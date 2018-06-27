@@ -3,6 +3,7 @@ layout: page
 Title: A little about me
 permalink: /about/
 ---
+## A little about me
 
 I am currently studying a masters in data science at City, University of London.
 
