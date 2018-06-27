@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head> 
-    <font size="50">
-      <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-    </font>
+    
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
 
@@ -19,7 +18,7 @@
 
   <body>
     <div class="wrapper-masthead">
-    <div style="background-color:lightblue">
+    <div style="background-color:lightgrey">
       <div class="container">
         <header class="masthead clearfix">
           <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
