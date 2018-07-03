@@ -5,7 +5,7 @@ title: Reinforcement Learning
 
 ### Project Brief: 
 
-Build a Q-learning agent capable of learning to complete a task in the domain of your choice.
+To build a Q-learning agent capable of learning to complete a task in the domain of your choice, produce a project report outlining your approach and findings.
 
 ### Approach:
 
