@@ -5,13 +5,13 @@ title: Reinforcement Learning
 
 ### Brief: 
 
-Build a Q-learning agent capable of learning to complete the task of your choice.
+Build a Q-learning agent capable of learning to complete a task in the domain of your choice.
 
-### Our Approach:
+### Approach:
 
 As a first crack at reinforcement learning (RL), we thought we'd keep it simple and go for the archetypal RL problem, an agent solving a maze. 
 
-In whichever language you prefer (I am using python), there are loads of ready-coded mazes for you out there to choose from - or you can make your own. We were working in python and wanted the ability to generate new mazes to try out with our agent so we opted for [this one](https://gist.github.com/fcogama/3689650). This maze generator is good because it allows you to change the size, density and complexity of the maze you generate. A generated maze will look something like the following, with black pixels representing the walls and white pixels representing the spaces. 
+In whichever language you prefer (python for me), there are loads of ready-coded mazes for you out there to choose from - or you can make your own. We were working in python and wanted the ability to generate new mazes to try out with our agent so we opted for [this one](https://gist.github.com/fcogama/3689650). This maze generator is good because it allows you to change the size, density and complexity of the maze you generate. A generated maze will look something like the following, with black pixels representing the walls and white pixels representing the spaces. 
 
 <center><img src="https://artificiallyintelligent.ml/images/example.png" width="250"></center>
 
