@@ -3,7 +3,7 @@ layout: post
 title: Reinforcement Learning 
 ---
 
-### Brief: 
+### Project Brief: 
 
 Build a Q-learning agent capable of learning to complete a task in the domain of your choice.
 
