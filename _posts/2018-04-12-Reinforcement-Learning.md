@@ -13,7 +13,7 @@ As a first crack at reinforcement learning (RL), we thought we'd keep it simple 
 
 In whichever language you prefer (I am using python), there are loads of ready-coded mazes for you out there to choose from - or you can make your own. We were working in python and wanted the ability to generate new mazes to try out with our agent so we opted for [this one](https://gist.github.com/fcogama/3689650). This maze generator is good because it allows you to change the size, density and complexity of the maze you generate. A generated maze will look something like the following, with black pixels representing the walls and white pixels representing the spaces. 
 
-![example](https://artificiallyintelligent.ml/images/example.png "Example Maze")
+<img src="https://artificiallyintelligent.ml/images/example.png" width="200">
 
 
 Now that we have a maze, we need to define a start point and the target. So we defined the start point to be the upper-leftmost space in a given maze and the target to be the lower-rightmost space. Throughout the rest of this post, we will colour the start point in yellow and the target in red. To define the Q-learning model, we need to define a state transition function and reward function. To define these, we need to label each of the spaces in the maze that the agent could occupy. These will be the states of the environment. We start by labeling the start point 0 and assigning the next natural number to each space in the maze from left to right, top to bottom - as if reading a book. We end up with something which looks like this.
@@ -24,7 +24,7 @@ The actions available to our agent in any given position will be to move to spac
 
 The best way to represent the reward function is in matrix form. To do this, we can [generate an adjacency matrix](https://gist.github.com/amason13/b82eed6b6a3a32a37f7d3117dd8e71e4) from our labeled spaces in the maze, and then set the rewards according to whichever reward function you have choosen. We defined our reward function to award our agent 100 points for reaching the target state, deduce 5 points for staying in the same position, and decude one point for moving positions without reaching the target state. The above maze's reward matrix would look like this. 
 
-![RM](https://artificiallyintelligent.ml/images/RM.png =100x100 "Reward Matrix")
+![RM](https://artificiallyintelligent.ml/images/RM.png "Reward Matrix")
 
 
 (Coding this in python, I used -10 in place of the dashes and restricted the agent's choice of actions to indices whose reward is greater than -10.)
