@@ -24,7 +24,7 @@ The actions available to our agent in any given position will be to move to spac
 
 The best way to represent the reward function is in matrix form. To do this, we can [generate an adjacency matrix](https://gist.github.com/amason13/b82eed6b6a3a32a37f7d3117dd8e71e4) from our labeled spaces in the maze, and then set the rewards according to whichever reward function you have choosen. We defined our reward function to award our agent 100 points for reaching the target state, deduce 5 points for staying in the same position, and decude one point for moving positions without reaching the target state. The above maze's reward matrix would look like this. 
 
-<img src="https://artificiallyintelligent.ml/images/RM.png" width="750" align="middle">
+<img src="https://artificiallyintelligent.ml/images/RM.png" width="500" align="middle">
 
 
 (Coding this in python, I used -10 in place of the dashes and restricted the agent's choice of actions to indices whose reward is greater than -10.)
@@ -55,7 +55,7 @@ As you can see, the agent had little success reaching to the target from much of
 
 A really cool project, which I thoroughly enjoyed. I definitely caught the RL bug! 
 
-Full report can be found [here](link).
+Full report can be found [here](https://artificiallyintelligent.ml/pdfs/software_agents_coursework.pdf).
 
 
 
