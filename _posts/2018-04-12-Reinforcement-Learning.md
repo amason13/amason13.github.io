@@ -27,6 +27,19 @@ On the subject of optimality, there was some confusion within our class as to wh
 
 Fortunately in the case of the maze, we do have another metric to test for optimality. We can represent the maze as a graph and then apply a least path algorithm to find the shortest route from the start point to the target and test this against the path found by our agent. Continuing with the simple maze from above, the graph is shown below. This is a trivial example but shows how optimality can be tested for in this domain.  _insert image_
 
-We trained our agen over 1000 training episodes in less than 30 seconds, in a 20x20 maze, tested it against the shortest path algorithm (networkx.shortest_path(_graph_,_start_,_end_)) and found that it had sucessfully found an optimal solution to the maze.
+We trained our agen over 1000 training episodes in less than 30 seconds, in a 20x20 maze, tested it against the shortest path algorithm (networkx.shortest_path(_graph_,_start_,_end_)) and found that it had successfully found an optimal solution, shown in purple.
+
+_insert img_
+
+We then decided to test how generalisable the trained agent was by dropping it into random starting points and seeing if it could reach the target. We found that the agent had limited success, often failing to reach the target when the starting point was far from the optimal path. To see exactly how generalisable the trained agent is, we systematically dropped the agent at each point in the maze and marked the starting point as green if it could successfully navigate its way out of the maze, and red if it couldn't. (The optimal path is still displayed in purple but this time the target is grey rather than red.)
+
+_insert image_
+
+As you can see, the agent had little success reaching to the target from much of the maze. Where it did have success, its starting points were close to the optimal path. This acts as a nice reminder that RL agents can be very highly skilled at completing specifical tasks, but the generalisablity of those skills - even in the case of just starting the same task from a different position - can be lacking. 
+
+A really cool project, which I thoroughly enjoyed. I definitely caught the RL bug! 
+
+Full report can be found [here](link).
+
 
 
