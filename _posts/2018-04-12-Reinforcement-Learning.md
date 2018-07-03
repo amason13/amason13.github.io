@@ -18,14 +18,13 @@ In whichever language you prefer (I am using python), there are loads of ready-c
 
 Now that we have a maze, we need to define a start point and the target. So we defined the start point to be the upper-leftmost space in a given maze and the target to be the lower-rightmost space. Throughout the rest of this post, we will colour the start point in yellow and the target in red. To define the Q-learning model, we need to define a state transition function and reward function. To define these, we need to label each of the spaces in the maze that the agent could occupy. These will be the states of the environment. We start by labeling the start point 0 and assigning the next natural number to each space in the maze from left to right, top to bottom - as if reading a book. We end up with something which looks like this.
 
-<img src="https://artificiallyintelligent.ml/images/G.png" width="250" align="middle">
+<center><img src="https://artificiallyintelligent.ml/images/G.png" width="250"></center>
 
 The actions available to our agent in any given position will be to move to spaces adjacent to its current space, or to stay in the same space. For example the available actions from position 0 are {0,1,5}, the available actions from position 1 are {0,1,2} and so on.
 
 The best way to represent the reward function is in matrix form. To do this, we can [generate an adjacency matrix](https://gist.github.com/amason13/b82eed6b6a3a32a37f7d3117dd8e71e4) from our labeled spaces in the maze, and then set the rewards according to whichever reward function you have choosen. We defined our reward function to award our agent 100 points for reaching the target state, deduce 5 points for staying in the same position, and deduce one point for moving positions without reaching the target state. The above maze's reward matrix would look like this. 
 
-<img src="https://artificiallyintelligent.ml/images/RM.png" width="500" align="middle">
-
+<center><img src="https://artificiallyintelligent.ml/images/RM.png" width="250"></center>
 
 (Coding this in python, I used -10 in place of the dashes and restricted the agent's choice of actions to indices whose reward is greater than -10.)
 
@@ -39,17 +38,15 @@ On the subject of optimality, there was some confusion within our class as to wh
 
 Fortunately in the case of the maze, we do have another metric to test for optimality. We can represent the maze as a graph and then apply a least path algorithm to find the shortest route from the start point to the target and test this against the path found by our agent. Continuing with the simple maze from above, the graph is shown below. This is a trivial example but shows how optimality can be tested for in this domain.  
 
-<img src="https://artificiallyintelligent.ml/images/graph.png" width="250" align="middle">
-
+<center><img src="https://artificiallyintelligent.ml/images/graph.png" width="250"></center>
 
 We trained our agen over 1000 training episodes in less than 30 seconds, in a 20x20 maze, tested it against the shortest path algorithm (networkx.shortest_path(_graph_,_start_,_end_)) and found that it had successfully found an optimal solution, shown in purple.
 
-<img src="https://artificiallyintelligent.ml/images/optimal.png" width="250" align="middle">
-
+<center><img src="https://artificiallyintelligent.ml/images/optimal.png" width="250"></center>
 
 We then decided to test how generalisable the trained agent was by dropping it into random starting points and seeing if it could reach the target. We found that the agent had limited success, often failing to reach the target when the starting point was far from the optimal path. To see exactly how generalisable the trained agent is, we systematically dropped the agent at each point in the maze and marked the starting point as green if it could successfully navigate its way out of the maze, and red if it couldn't. (The optimal path is still displayed in purple but this time the target is grey rather than red.)
 
-<img src="https://artificiallyintelligent.ml/images/colour.png" width="250" align="middle">
+<center><img src="https://artificiallyintelligent.ml/images/colour.png" width="250"></center>
 
 As you can see, the agent had little success reaching to the target from much of the maze. Where it did have success, its starting points were close to the optimal path. This acts as a nice reminder that RL agents can be very highly skilled at completing specific tasks, but the generalisablity of those skills - even in the case of just starting the same task from a different position - can be lacking. 
 
