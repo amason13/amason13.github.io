@@ -22,7 +22,7 @@ Now that we have a maze, we need to define a start point and the target. So we d
 
 The actions available to our agent in any given position will be to move to spaces adjacent to its current space, or to stay in the same space. For example the available actions from position 0 are {0,1,5}, the available actions from position 1 are {0,1,2} and so on.
 
-The best way to represent the reward function is in matrix form. To do this, we can [generate an adjacency matrix](https://gist.github.com/amason13/b82eed6b6a3a32a37f7d3117dd8e71e4) from our labeled spaces in the maze, and then set the rewards according to whichever reward function you have choosen. We defined our reward function to award our agent 100 points for reaching the target state, deduce 5 points for staying in the same position, and decude one point for moving positions without reaching the target state. The above maze's reward matrix would look like this. 
+The best way to represent the reward function is in matrix form. To do this, we can [generate an adjacency matrix](https://gist.github.com/amason13/b82eed6b6a3a32a37f7d3117dd8e71e4) from our labeled spaces in the maze, and then set the rewards according to whichever reward function you have choosen. We defined our reward function to award our agent 100 points for reaching the target state, deduce 5 points for staying in the same position, and deduce one point for moving positions without reaching the target state. The above maze's reward matrix would look like this. 
 
 <img src="https://artificiallyintelligent.ml/images/RM.png" width="500" align="middle">
 
@@ -35,7 +35,7 @@ Speaking of exploration, when defining a Q-learning problem, we need to choose a
 
 There are a handful of parameters in play in Q-learning. Epsilon is one of them, the amount by which we reduce epsilon after each training episode - known as lambda - is another, but you also have the learning rate - alpha, and the discount factor - gamma. Formal definitions are given for them in the [paper](link), but you can think of alpha as the parameter controlling how much learning is done as each action is taken, and gamma as the parameter controlling to what extent future rewards are taken into account. When evaluating our agents performance, we performed a grid search to find the set of parameters which most efficiently found an optimal solution to our maze. 
 
-On the subject of optimality, there was some confusion within our class as to what an optimal solution actually is. Some people were misusing the word optimal to describe the set of parameters which performed best for their task out of the ones they tested. This does **not** mean the solution found under these parameters is optimal! In fact, in some cases it may not even be possible to know whether your solution is optimal or not. There is a [proof](http://users.isr.ist.utl.pt/~mtjspaan/readingGroup/ProofQlearning.pdf) that Q-learning will _eventually_ converge to an optimal solution, but convergence is not guarenteed in any finite number of iterations. This means that without some other metric to test for optimality, we need to be careful when claiming to have found an optimal solution when we actually mean the best solution from the sets of parameters tested.
+On the subject of optimality, there was some confusion within our class as to what an optimal solution actually is. Some people were misusing the word optimal to describe the set of parameters which performed best for their task out of the ones they tested. This does **not** mean the solution found under these parameters is optimal! In fact, in some cases it may not even be possible to know whether your solution is optimal or not. There is a [proof](http://users.isr.ist.utl.pt/~mtjspaan/readingGroup/ProofQlearning.pdf) that Q-learning will _eventually_ converge to an optimal solution, but convergence is not guaranteed in any finite number of iterations. This means that without some other metric to test for optimality, we need to be careful when claiming to have found an optimal solution when we actually mean the best solution from the sets of parameters tested.
 
 Fortunately in the case of the maze, we do have another metric to test for optimality. We can represent the maze as a graph and then apply a least path algorithm to find the shortest route from the start point to the target and test this against the path found by our agent. Continuing with the simple maze from above, the graph is shown below. This is a trivial example but shows how optimality can be tested for in this domain.  
 
@@ -51,11 +51,11 @@ We then decided to test how generalisable the trained agent was by dropping it i
 
 <img src="https://artificiallyintelligent.ml/images/colour.png" width="250" align="middle">
 
-As you can see, the agent had little success reaching to the target from much of the maze. Where it did have success, its starting points were close to the optimal path. This acts as a nice reminder that RL agents can be very highly skilled at completing specifical tasks, but the generalisablity of those skills - even in the case of just starting the same task from a different position - can be lacking. 
+As you can see, the agent had little success reaching to the target from much of the maze. Where it did have success, its starting points were close to the optimal path. This acts as a nice reminder that RL agents can be very highly skilled at completing specific tasks, but the generalisablity of those skills - even in the case of just starting the same task from a different position - can be lacking. 
 
 A really cool project, which I thoroughly enjoyed. I definitely caught the RL bug! 
 
-Full report can be found [here](https://artificiallyintelligent.ml/pdfs/software_agents_coursework.pdf).
+Full report can be found [here](https://artificiallyintelligent.ml/pdfs/Software_Agents_Coursework.pdf).
 
 
 
