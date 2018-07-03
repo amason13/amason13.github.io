@@ -6,7 +6,7 @@ title: Machine Learning
 ### Project Brief:
 In teams of 2, implement 2 different machine learning models to the task and dataset of your choice, compare and contrast and display your findings in a poster. 
 
-### Our Approach:
+### Approach:
 I worked with my friend, [Sergio](https://github.com/sergiorozada12), on this one. It was the first project of the course and so, inexperienced and naive, we thought we would accurately predict football score lines with this fantastic new thing we were learning about called machine learning... we were soon disabused of that notion. 
 
 The data set we were using was a [European Football](https://www.kaggle.com/jangot/ligue1-match-statistics/version/2) dataset from kaggle, which had ~9k observations of 92 dimensional data. Our approach was a 70:20:10 split of training to validation to testing data and we choose to compare logistic regression to a random forest. 
