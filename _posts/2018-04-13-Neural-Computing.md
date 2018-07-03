@@ -6,7 +6,7 @@ title: Neural Computing
 ### Project Brief:
 Working as a pair, implement 2 different Neural Network models to the task and dataset of your choice, compare and contrast and provide a (no more than 6 page) report of your findings. 
 
-### Our Approach:
+### Approach:
 We decided to compare a Multi-Layer Perceptron (MLP) to a Convolutional Neural Network (CNN) to classify handwritten digits on a subset of the famous MNIST dataset. It is worth noting that we knew which model would be more accurate, CNNs go hand in hand with image classification tasks. They were biologically inspired by the way the different regions of the brain process images at different levels of abstraction for visual pattern recognition. Our task was not to cover new ground, but to gain experience implementing these models for ourselves and show our understanding of them. 
 
 In our implementation of the MLP, we had an input layer, 2 hidden layers and an output layer. The input layer had 784 neurons - one for each pixel in the image - and the output layer had 10 neurons - one for each of the digits 0-9. As for the number of neurons in each hidden layer, that was one of the hyper-parameters we searched for in our grid search. 
