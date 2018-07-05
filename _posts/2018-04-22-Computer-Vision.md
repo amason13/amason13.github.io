@@ -14,6 +14,9 @@ The dataset for this project was collected from photos taken of students from ou
 
 #### Creating the dataset
 
+Here is a sample of the photos taken to create the dataset. Holding up ID numbers like this, it looked as though we'd all been arrested (aside from the smiley face), and were having our photo taken as we were being checked into prison, so we affectionally called these photos the 'mugshots.' 
+
 <center><img src="https://artificiallyintelligent.ml/images/1.png" width="250"></center>
 
-Each of these 'mugshot' photos taken were done with apple live photo which takes a short ~3 second video around the photo so you can play it like a gif. The benefit of this was that I was able to generate lots of training data from the frames of these short videos. I took every 14th frame of each video which gave me about 20 images per photo. With around 5-6 live photos per person, this gave me ~100 photos per person (before augmentation) to train on which is plenty for the scope of this task. Once I had the dataset, I set some aside for validation. The testing images had already been set aside by our prof and we didn't have access to them.
+Each of the mugshots were taken using apple live photo which takes a short ~3 second video around the photo so you can play it like a gif. The benefit of this was that I was able to generate lots of training data from the frames of these short videos. I took every 14th frame of each video which gave me about 20 images per photo. With around 5-6 live photos per person, this gave me ~100 photos per person (before augmentation) to train on which is plenty for the scope of this task. Once I had the dataset, I set some aside for validation. The testing images had already been set aside by our prof and we didn't have access to them.
+
