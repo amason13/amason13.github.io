@@ -46,5 +46,4 @@ I had to iterate this process a few times adding more varied negative generators
 
 <center><img src="https://artificiallyintelligent.ml/images/3.png" width="250"><img src="https://artificiallyintelligent.ml/images/4.png" width="250"></center>
 
-
-[transfer learning](https://www.mathworks.com/help/nnet/examples/transfer-learning-using-alexnet.html)
+The second step was to train a model to correctly classify the ID numbers. I ran my cascade classifier on the dataset and extracted the regions, discarding the few false positives that still remained. I then had to manually label the extracted ID numbers - by binning them into folders - so I could use this labelled data to train a classification model. I opted to use a CNN as they work famously well for such tasks. Fortunately it wasn't necessary to train a CNN from randomly initialised weights thanks to a nifty little trick called [transfer learning](https://www.mathworks.com/help/nnet/examples/transfer-learning-using-alexnet.html). Tranfer learning is the process of taking a pre-trained network of some sort and using that as a starting point from which to train your own network. Following the MATLAB example, I retrained Alexnet - of ImageNet competition fame - replacing the final output layer with one fit for my own purpose.
