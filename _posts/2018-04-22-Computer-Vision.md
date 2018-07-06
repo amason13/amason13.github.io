@@ -31,3 +31,6 @@ Each person is holding a white piece of paper with a black 2 digit number printe
 There are a number of ways to approach this. 
 One approach is to apply a method of edge or corner detection on the image. Edge detection works by applying a filter over the image and pixels where the result is greater than a user-defined threshold form edges. In basic terms, corner detection seeks to identify where two edges meet. I played around with the edge and corner detection on a small subset of images, changing the strength threshold, in an attempt to capture the desired region. However, I found that whenever I changed the threshold so the desired region was captured in one image, it would throw another one out of sync. 
 
+
+<center><img src="https://artificiallyintelligent.ml/images/me.png" width="250"><img src="https://artificiallyintelligent.ml/images/2.png" width="250"></center>
+
